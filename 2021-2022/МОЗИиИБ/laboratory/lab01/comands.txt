@@ -1,0 +1,18 @@
+REPORT
+---
+
+DOCX:
+pandoc L01_Aronova_report.md -F pandoc-crossref --number-sections --citeproc -o L01_Aronova_report.docx
+
+PDF:
+pandoc L01_Aronova_report.md -F pandoc-crossref --pdf-engine=xelatex --pdf-engine-opt=--shell-escape --citeproc --number-sections -o L01_Aronova_report.pdf
+
+
+PRESENTATION
+---
+
+PDF 1:
+pandoc L01_Aronova_presentation.md -F pandoc-crossref --pdf-engine=lualatex --number-sections -t beamer --slide-level=2 -o L01_Aronova_presentation.pdf
+
+PDF 2:
+-unoconv "$<" "$@"
